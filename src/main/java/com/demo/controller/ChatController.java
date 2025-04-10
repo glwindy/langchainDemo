@@ -10,6 +10,7 @@ import dev.langchain4j.model.chat.response.ChatResponse;
 import dev.langchain4j.model.chat.response.StreamingChatResponseHandler;
 import dev.langchain4j.service.TokenStream;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -26,6 +27,7 @@ public class ChatController {
     QwenStreamingChatModel qwenStreamingChatModel;
 
     // 记忆对话
+    @Qualifier("assistant")
     @Autowired
     AiConfig.Assistant assistant;
 
